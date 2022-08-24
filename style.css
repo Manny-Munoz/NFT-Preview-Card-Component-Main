@@ -1,0 +1,101 @@
+:root{
+  --bg-color: hsl(217, 54%, 11%);
+  --bg-card-color: hsla(216, 50%, 16%, 0.3);
+  --accent-font-color: hsla(178, 100%, 50%, 0.3);
+  --font-color: hsl(215, 51%, 70%);
+  --border-radius: 3%;
+  --line-color: hsl(215, 32%, 27%)
+}
+
+html{ box-sizing: border-box; font-size: 18px}
+
+*, *::after, *::before{ box-sizing: inherit;}
+
+body{
+  min-height: 100vh;
+  margin: 0;
+  font-family: "Outfit", sans-serif;
+  background-color: var(--bg-color);
+  color: var(--font-color);
+}
+
+main{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(350px, 90vw), min-content));
+  justify-content: center;
+  align-items: center;
+}
+
+a{ text-decoration: none;}
+
+img{ max-width: 100%; height: auto;}
+
+
+.card{
+  background-color: var(--bg-card-color);
+  padding: 2rem;
+  border-radius: var(--border-radius);
+  backdrop-filter: blur(10px);
+}
+
+.card__info, .card__footer{
+  display: flex;
+}
+
+.card__img{ border-radius: var(--border-radius);}
+
+.card__info{ justify-content: space-between;}
+
+.card__text{ font-size: .9rem}
+
+.card__text--accent{ font-weight: 600; color: var(--accent-font-color)}
+
+.card__text--light{ color: #fff}
+
+.card__footer{
+  padding-top: .5rem;
+  border-top: 1px solid var(line-color);
+  align-items: center;
+}
+
+.list{
+  list-style: none;
+  padding: 0;
+}
+
+.card__img--small{
+  height: 2rem;
+  margin-right: 0.3rem;
+  border: 1px solid #fff;
+  border-radius: 50%
+}
+
+.card__header{
+  position: relative;
+}
+
+.card__img--hover::before{
+  content: "";
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  aspect-ratio: 1;
+  border-radius: var(--border-radius)
+}
+
+
+.card__img--hover:hover::before{
+  background-color: var(--accent-font-color);
+  background-image: url("./images/icon-view.svg");
+  background-repeat: no-repeat;
+  background-position: center
+}
+
+.card__text--hover{
+  padding-left: 0.1rem
+}
+
+.card__text--hover:hover{
+  color: var(--accent-font-color)
+}

@@ -4,7 +4,8 @@
   --accent-font-color: hsla(178, 100%, 50%, 0.3);
   --font-color: hsl(215, 51%, 70%);
   --border-radius: 3%;
-  --line-color: hsl(215, 32%, 27%)
+  --line-color: hsl(215, 32%, 27%);
+  --transition-time: .5s;
 }
 
 html{ box-sizing: border-box; font-size: 18px}
@@ -12,16 +13,18 @@ html{ box-sizing: border-box; font-size: 18px}
 *, *::after, *::before{ box-sizing: inherit;}
 
 body{
+  display: grid;
   min-height: 100vh;
   margin: 0;
   font-family: "Outfit", sans-serif;
   background-color: var(--bg-color);
   color: var(--font-color);
+  gap: 1rem;
 }
 
 main{
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(350px, 90vw), min-content));
+  grid-template-columns: repeat(auto-fit, minmax(min(320px, 70vw), min-content));
   justify-content: center;
   align-items: center;
 }
@@ -67,7 +70,7 @@ img{ max-width: 100%; height: auto;}
   height: 2rem;
   margin-right: 0.3rem;
   border: 1px solid #fff;
-  border-radius: 50%
+  border-radius: 50%;
 }
 
 .card__header{
@@ -81,7 +84,8 @@ img{ max-width: 100%; height: auto;}
   top: 0;
   width: 100%;
   aspect-ratio: 1;
-  border-radius: var(--border-radius)
+  border-radius: var(--border-radius);
+  transition: background-color var(--transition-time);
 }
 
 
@@ -93,9 +97,24 @@ img{ max-width: 100%; height: auto;}
 }
 
 .card__text--hover{
-  padding-left: 0.1rem
+  padding-left: 0.1rem;
+  transition: var(--transition-time);
 }
 
 .card__text--hover:hover{
+  color: var(--accent-font-color);
+}
+
+.attribution{
+  display: flex;
+  justify-content: center;
+}
+
+.text{
+  margin: 0;
+  font-size: 0.7rem;
+}
+
+.link{
   color: var(--accent-font-color)
 }
